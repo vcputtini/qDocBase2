@@ -1,0 +1,15 @@
+INPUT(
+./release\vcplib2.o
+./release\vcpmdiarea.o
+./release\vcpuppervalidator.o
+./release\vcplowervalidator.o
+./release\vcpdoublevalidator.o
+./release\vcpftp.o
+./release\cnpj.o
+./release\cpf.o
+./release\moc_vcpmdiarea.o
+./release\moc_vcpuppervalidator.o
+./release\moc_vcplowervalidator.o
+./release\moc_vcpdoublevalidator.o
+./release\moc_vcpftp.o
+);
