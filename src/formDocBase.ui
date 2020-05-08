@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <author>Puttini, Volnei C.</author>
+ <class>MWDocBase</class>
+ <widget class="QMainWindow" name="MWDocBase">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1088</width>
+    <height>627</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>DocBase</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="application.qrc">
+    <normaloff>:/docbase.png</normaloff>:/docbase.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1088</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuArquivos">
+    <property name="title">
+     <string>&amp;Arquivos</string>
+    </property>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuFerramentas">
+    <property name="title">
+     <string>&amp;Ferramentas</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuAjuda">
+    <property name="title">
+     <string>A&amp;juda</string>
+    </property>
+   </widget>
+   <addaction name="menuArquivos"/>
+   <addaction name="menuFerramentas"/>
+   <addaction name="menuAjuda"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QDockWidget" name="dockWidgetEntity">
+   <property name="allowedAreas">
+    <set>Qt::TopDockWidgetArea</set>
+   </property>
+   <property name="windowTitle">
+    <string>Entidades</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>4</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_2">
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="0" column="1">
+      <widget class="QSpinBox" name="spinBoxAno">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>90</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>90</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="prefix">
+        <string>Ano: </string>
+       </property>
+       <property name="minimum">
+        <number>2000</number>
+       </property>
+       <property name="maximum">
+        <number>2032</number>
+       </property>
+       <property name="value">
+        <number>2000</number>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QCheckBox" name="checkBoxEntityIdentify">
+       <property name="text">
+        <string>Entidade Relacionada</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QCheckBox" name="checkBoxStatus">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>91</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>91</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Ativos</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+       <property name="tristate">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0" colspan="8">
+      <widget class="tvEntity" name="treeViewEntity">
+       <property name="frameShadow">
+        <enum>QFrame::Sunken</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="7">
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>320</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="0" column="4">
+      <widget class="QComboBox" name="comboBoxSearch">
+       <item>
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>CNPJ</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>I.E.</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>CPF</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>R.G.</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="Line" name="line">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="5">
+      <widget class="QLineEdit" name="lineEditSearch">
+       <property name="minimumSize">
+        <size>
+         <width>200</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="6">
+      <widget class="QToolButton" name="toolButtonSearch">
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/filefind.png</normaloff>:/filefind.png</iconset>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="dockWidgetFindDocs">
+   <property name="features">
+    <set>QDockWidget::AllDockWidgetFeatures</set>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::TopDockWidgetArea</set>
+   </property>
+   <property name="windowTitle">
+    <string>Pesquisa de Documentos</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>4</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_3">
+    <layout class="QGridLayout" name="gridLayout_3">
+     <item row="0" column="0">
+      <widget class="QSpinBox" name="spinBoxFindStartYear">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>90</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>90</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Ano inicial</string>
+       </property>
+       <property name="prefix">
+        <string>De:</string>
+       </property>
+       <property name="minimum">
+        <number>2000</number>
+       </property>
+       <property name="maximum">
+        <number>2032</number>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QSpinBox" name="spinBoxFindEndYear">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>90</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>91</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Ano final</string>
+       </property>
+       <property name="suffix">
+        <string/>
+       </property>
+       <property name="prefix">
+        <string>Até:</string>
+       </property>
+       <property name="minimum">
+        <number>2000</number>
+       </property>
+       <property name="maximum">
+        <number>2032</number>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QToolButton" name="toolButtonFind">
+       <property name="statusTip">
+        <string>Pesquisa pela Data de Cadastro dos documentos</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/filefind.png</normaloff>:/filefind.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>144</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="1" column="0" colspan="4">
+      <widget class="tvFindDocs" name="treeViewFind">
+       <property name="editTriggers">
+        <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>false</bool>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="dockWModulos">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>100</width>
+     <height>133</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>190</width>
+     <height>524287</height>
+    </size>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
+   </property>
+   <property name="windowTitle">
+    <string>Módulos do Sistema</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="lvModulosP" name="lvModulos"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>lvModulosP</class>
+   <extends>QListView</extends>
+   <header location="global">lvmodulosp.h</header>
+  </customwidget>
+  <customwidget>
+   <class>tvEntity</class>
+   <extends>QTreeView</extends>
+   <header location="global">tventity.h</header>
+  </customwidget>
+  <customwidget>
+   <class>tvFindDocs</class>
+   <extends>QTreeView</extends>
+   <header location="global">tvfinddocs.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>spinBoxAno</tabstop>
+  <tabstop>checkBoxEntityIdentify</tabstop>
+  <tabstop>checkBoxStatus</tabstop>
+  <tabstop>treeViewEntity</tabstop>
+  <tabstop>comboBoxSearch</tabstop>
+  <tabstop>lineEditSearch</tabstop>
+  <tabstop>toolButtonSearch</tabstop>
+  <tabstop>spinBoxFindStartYear</tabstop>
+  <tabstop>spinBoxFindEndYear</tabstop>
+  <tabstop>toolButtonFind</tabstop>
+  <tabstop>treeViewFind</tabstop>
+  <tabstop>lvModulos</tabstop>
+ </tabstops>
+ <resources>
+  <include location="application.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>dockWidgetEntity</sender>
+   <signal>visibilityChanged(bool)</signal>
+   <receiver>MWDocBase</receiver>
+   <slot>dockWidgetEntity_visibilityChanged(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>126</x>
+     <y>33</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>452</x>
+     <y>321</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lvModulos</sender>
+   <signal>doubleClicked(QModelIndex)</signal>
+   <receiver>MWDocBase</receiver>
+   <slot>lvModulos_doubleClicked(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>167</x>
+     <y>443</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>390</x>
+     <y>164</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBoxSearch</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>lineEditSearch</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>363</x>
+     <y>60</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>429</x>
+     <y>66</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>lvModulos_doubleClicked(QModelIndex)</slot>
+  <slot>tvEntity_doubleClicked(QModelIndex)</slot>
+  <slot>dockWidgetEntity_visibilityChanged(bool)</slot>
+ </slots>
+</ui>
