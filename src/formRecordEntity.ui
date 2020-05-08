@@ -1,0 +1,1417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <author>Puttini, Volnei C.</author>
+ <class>RecordEntity</class>
+ <widget class="QWidget" name="RecordEntity">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1090</width>
+    <height>629</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Manutenção de Entidades</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="application.qrc">
+    <normaloff>:/docbase.png</normaloff>:/docbase.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QLineEdit {
+    border: 1px solid gray;
+    border-radius: 5px;
+	border-style: outset;
+	/*background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(192, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));*/
+	
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(210, 210, 210 255), stop:1 rgba(255, 255, 255, 255));
+}
+
+QLineEdit::hover {
+	selection-background-color: rgb(46, 91, 255);
+    border: 1px outset rgb(44, 114, 199);
+}</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_4">
+   <item row="0" column="0">
+    <widget class="QFrame" name="frame">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>890</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>890</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QComboBox" name="comboBoxTel2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>310</y>
+        <width>151</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>15</width>
+        <height>16</height>
+       </size>
+      </property>
+      <item>
+       <property name="text">
+        <string>Comercial</string>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/telefone50x48.png</normaloff>:/telefone50x48.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Residêncial</string>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/telefone50x48.png</normaloff>:/telefone50x48.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Celular Comercial</string>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/celular50x48.png</normaloff>:/celular50x48.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Cel. Residêncial</string>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/celular50x48.png</normaloff>:/celular50x48.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Fax Comercial</string>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/fax50x48.png</normaloff>:/fax50x48.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Fax Residêncial</string>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/fax50x48.png</normaloff>:/fax50x48.png</iconset>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLineEdit" name="lineEditContato2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>369</y>
+        <width>331</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="maxLength">
+       <number>40</number>
+      </property>
+      <property name="placeholderText">
+       <string>contato</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEditTelNum3">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>280</y>
+        <width>271</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="maxLength">
+       <number>30</number>
+      </property>
+      <property name="placeholderText">
+       <string>numero</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEditEnder">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>159</y>
+        <width>541</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="maxLength">
+       <number>60</number>
+      </property>
+      <property name="placeholderText">
+       <string>endereço</string>
+      </property>
+     </widget>
+     <widget class="QTabWidget" name="tabWidgetModelos">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>430</y>
+        <width>851</width>
+        <height>170</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>170</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>170</height>
+       </size>
+      </property>
+      <property name="currentIndex">
+       <number>2</number>
+      </property>
+      <widget class="QWidget" name="tab_4">
+       <attribute name="title">
+        <string>&amp;Empresa/Fornecedor/Cliente</string>
+       </attribute>
+       <widget class="QLineEdit" name="lineEditCNPJ">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>11</y>
+          <width>251</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>CNPJ: Formato: 000.000.000/0000-00</string>
+        </property>
+        <property name="statusTip">
+         <string>CNPJ</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+    border: 1px solid gray;
+    border-radius: 5px;
+	border-style: outset;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(241,222,223,255), stop:1 rgba(255, 255, 255, 255));
+
+}
+
+QLineEdit::hover {
+	selection-background-color: rgb(240, 134, 130);
+    border: 1px outset rgb(232, 87, 82);
+}</string>
+        </property>
+        <property name="inputMask">
+         <string>00.000.000/0000-00</string>
+        </property>
+        <property name="maxLength">
+         <number>18</number>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEditIE">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>11</y>
+          <width>231</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Inscrição Estadual: Formato: 000.000.000.000</string>
+        </property>
+        <property name="statusTip">
+         <string>Inscrição Estadual</string>
+        </property>
+        <property name="inputMask">
+         <string>000.000.000.000</string>
+        </property>
+        <property name="maxLength">
+         <number>15</number>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEditIM">
+        <property name="geometry">
+         <rect>
+          <x>510</x>
+          <y>10</y>
+          <width>171</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Inscrição Municipal</string>
+        </property>
+        <property name="statusTip">
+         <string>Inscrição Municipal</string>
+        </property>
+        <property name="maxLength">
+         <number>20</number>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEditURL">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>87</y>
+          <width>741</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="statusTip">
+         <string>Endereço do web site</string>
+        </property>
+        <property name="maxLength">
+         <number>255</number>
+        </property>
+        <property name="placeholderText">
+         <string>http://</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEditCPF">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>50</y>
+          <width>251</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>CPF: 000.000.000-00</string>
+        </property>
+        <property name="statusTip">
+         <string>CPF</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+    border: 1px solid gray;
+    border-radius: 5px;
+	border-style: outset;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(241,222,223,255), stop:1 rgba(255, 255, 255, 255));
+
+}
+
+QLineEdit::hover {
+	selection-background-color: rgb(240, 134, 130);
+    border: 1px outset rgb(232, 87, 82);
+}</string>
+        </property>
+        <property name="inputMask">
+         <string>000.000.000-00</string>
+        </property>
+        <property name="maxLength">
+         <number>14</number>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEditRG">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>50</y>
+          <width>251</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>RG: 000.000.000-V/OOO-EE
+Onde: V = Via; OOO = Orgão Emissor; EE = Sigla do Estado
+(Estes campos são opcionais)
+ex; 011.222.333/SSP-SP</string>
+        </property>
+        <property name="statusTip">
+         <string>RG</string>
+        </property>
+        <property name="inputMask">
+         <string>00.000.000-X/XXX-XX</string>
+        </property>
+        <property name="maxLength">
+         <number>19</number>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_5">
+       <attribute name="title">
+        <string>&amp;Projeto/Obra</string>
+       </attribute>
+       <widget class="QLineEdit" name="lineEditObraCEI">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>39</y>
+          <width>261</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>CEI</string>
+        </property>
+        <property name="statusTip">
+         <string>CEI</string>
+        </property>
+        <property name="maxLength">
+         <number>20</number>
+        </property>
+        <property name="placeholderText">
+         <string>CEI</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBoxObraCliente">
+        <property name="geometry">
+         <rect>
+          <x>120</x>
+          <y>11</y>
+          <width>540</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Nome do Cliente</string>
+        </property>
+        <property name="statusTip">
+         <string>Nome do Cliente</string>
+        </property>
+        <property name="editable">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBoxbObraCrono">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>40</y>
+          <width>121</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Cronograma da Obra</string>
+        </property>
+        <property name="statusTip">
+         <string>Cronograma da Obra</string>
+        </property>
+        <property name="suffix">
+         <string> Mês(es)</string>
+        </property>
+        <property name="maximum">
+         <number>999</number>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEditObraCod">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>101</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Código da Obra</string>
+        </property>
+        <property name="statusTip">
+         <string>Código da Obra</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+	background: rgb(241,222,223)
+};</string>
+        </property>
+        <property name="inputMask">
+         <string>00000-00</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Personalizad&amp;o</string>
+       </attribute>
+       <widget class="QLineEdit" name="lineEditOutEspec">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>11</y>
+          <width>371</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+	background: rgb(241,222,223)
+};</string>
+        </property>
+        <property name="maxLength">
+         <number>50</number>
+        </property>
+        <property name="placeholderText">
+         <string>especificação</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEditOutNFld1">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>42</y>
+          <width>151</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="maxLength">
+         <number>15</number>
+        </property>
+        <property name="placeholderText">
+         <string>nome do campo</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEditOutDFld1">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>42</y>
+          <width>671</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="maxLength">
+         <number>255</number>
+        </property>
+        <property name="placeholderText">
+         <string>conteúdo do campo</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEditOutDFld2">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>74</y>
+          <width>671</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="maxLength">
+         <number>255</number>
+        </property>
+        <property name="placeholderText">
+         <string>conteúdo do campo</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEditOutNFld2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>74</y>
+          <width>151</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="maxLength">
+         <number>15</number>
+        </property>
+        <property name="placeholderText">
+         <string>nome do campo</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEditOutObs">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>107</y>
+          <width>731</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="maxLength">
+         <number>255</number>
+        </property>
+        <property name="placeholderText">
+         <string>observações</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QLineEdit" name="lineEditContato1">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>340</y>
+        <width>331</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="maxLength">
+       <number>40</number>
+      </property>
+      <property name="placeholderText">
+       <string>contato</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEditEmail2">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>369</y>
+        <width>481</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhEmailCharactersOnly</set>
+      </property>
+      <property name="maxLength">
+       <number>255</number>
+      </property>
+      <property name="placeholderText">
+       <string>email</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBoxTel4">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>310</y>
+        <width>151</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>15</width>
+        <height>16</height>
+       </size>
+      </property>
+      <item>
+       <property name="text">
+        <string>Comercial</string>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/telefone50x48.png</normaloff>:/telefone50x48.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Residêncial</string>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/telefone50x48.png</normaloff>:/telefone50x48.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Celular Comercial</string>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/celular50x48.png</normaloff>:/celular50x48.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Cel. Residêncial</string>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/celular50x48.png</normaloff>:/celular50x48.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Fax Comercial</string>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/fax50x48.png</normaloff>:/fax50x48.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Fax Residêncial</string>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/fax50x48.png</normaloff>:/fax50x48.png</iconset>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="comboBoxUF">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>219</y>
+        <width>51</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>UF</string>
+      </property>
+      <property name="statusTip">
+       <string/>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="maxVisibleItems">
+       <number>5</number>
+      </property>
+      <item>
+       <property name="text">
+        <string/>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>AC</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>AL</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>AP</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>AM</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>BA</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>CE</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>DF</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>ES</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>GO</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>MA</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>MT</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>MS</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>MG</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>PA</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>PB</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>PR</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>PE</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>PI</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>RR</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>RO</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>RJ</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>RN</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>RS</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>SC</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>SP</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>SE</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>TO</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="comboBoxTel3">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>280</y>
+        <width>151</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>15</width>
+        <height>16</height>
+       </size>
+      </property>
+      <item>
+       <property name="text">
+        <string>Comercial</string>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/telefone50x48.png</normaloff>:/telefone50x48.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Residêncial</string>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/telefone50x48.png</normaloff>:/telefone50x48.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Celular Comercial</string>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/celular50x48.png</normaloff>:/celular50x48.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Cel. Residêncial</string>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/celular50x48.png</normaloff>:/celular50x48.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Fax Comercial</string>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/fax50x48.png</normaloff>:/fax50x48.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Fax Residêncial</string>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/fax50x48.png</normaloff>:/fax50x48.png</iconset>
+       </property>
+      </item>
+     </widget>
+     <widget class="QCheckBox" name="checkBoxStatus">
+      <property name="geometry">
+       <rect>
+        <x>148</x>
+        <y>32</y>
+        <width>91</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Ativo</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEditEmail1">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>339</y>
+        <width>481</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhEmailCharactersOnly</set>
+      </property>
+      <property name="maxLength">
+       <number>255</number>
+      </property>
+      <property name="placeholderText">
+       <string>email</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEditBair">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>189</y>
+        <width>541</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="maxLength">
+       <number>60</number>
+      </property>
+      <property name="placeholderText">
+       <string>bairro</string>
+      </property>
+     </widget>
+     <widget class="QFrame" name="frame_2">
+      <property name="geometry">
+       <rect>
+        <x>11</x>
+        <y>10</y>
+        <width>131</width>
+        <height>66</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>66</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>66</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Panel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Sunken</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QLCDNumber" name="lcdNumberCodigo">
+           <property name="digitCount">
+            <number>10</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelDateReg">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLineEdit" name="lineEditAlias">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>129</y>
+        <width>271</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="maxLength">
+       <number>30</number>
+      </property>
+      <property name="placeholderText">
+       <string>apelido</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEditNome">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>99</y>
+        <width>541</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    border: 1px solid gray;
+    border-radius: 5px;
+	border-style: outset;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(241,222,223,255), stop:1 rgba(255, 255, 255, 255));
+
+}
+
+QLineEdit::hover {
+	selection-background-color: rgb(240, 134, 130);
+    border: 1px outset rgb(232, 87, 82);
+}</string>
+      </property>
+      <property name="maxLength">
+       <number>60</number>
+      </property>
+      <property name="placeholderText">
+       <string>nome</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBoxClasses">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>10</y>
+        <width>641</width>
+        <height>63</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>63</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>63</height>
+       </size>
+      </property>
+      <property name="title">
+       <string>Classes</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QRadioButton" name="radioButtonEmpresa">
+         <property name="text">
+          <string>Empresa</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QRadioButton" name="radioButtonCliente">
+         <property name="text">
+          <string>Cliente</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QRadioButton" name="radioButtonFornecedor">
+         <property name="text">
+          <string>Fornecedor</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QRadioButton" name="radioButtonProjetos">
+         <property name="text">
+          <string>Projetos/Obras</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="4">
+        <widget class="QRadioButton" name="radioButtonOutros">
+         <property name="text">
+          <string>Personalizado</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="5">
+        <widget class="QRadioButton" name="radioButtonSimples">
+         <property name="text">
+          <string>Simples</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLineEdit" name="lineEditTelNum2">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>310</y>
+        <width>271</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="maxLength">
+       <number>30</number>
+      </property>
+      <property name="placeholderText">
+       <string>numero</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEditCity">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>219</y>
+        <width>541</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    border: 1px solid gray;
+    border-radius: 5px;
+	border-style: outset;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(241,222,223,255), stop:1 rgba(255, 255, 255, 255));
+
+}
+
+QLineEdit::hover {
+	selection-background-color: rgb(240, 134, 130);
+    border: 1px outset rgb(232, 87, 82);
+}</string>
+      </property>
+      <property name="maxLength">
+       <number>60</number>
+      </property>
+      <property name="placeholderText">
+       <string>cidade</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEditTelNum1">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>280</y>
+        <width>271</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="maxLength">
+       <number>30</number>
+      </property>
+      <property name="placeholderText">
+       <string>numero</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEditTelNum4">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>310</y>
+        <width>271</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="maxLength">
+       <number>30</number>
+      </property>
+      <property name="placeholderText">
+       <string>numero</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBoxTel1">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>279</y>
+        <width>151</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>15</width>
+        <height>16</height>
+       </size>
+      </property>
+      <item>
+       <property name="text">
+        <string>Comercial</string>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/telefone50x48.png</normaloff>:/telefone50x48.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Residêncial</string>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/telefone50x48.png</normaloff>:/telefone50x48.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Celular Comercial</string>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/celular50x48.png</normaloff>:/celular50x48.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Cel. Residêncial</string>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/celular50x48.png</normaloff>:/celular50x48.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Fax Comercial</string>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/fax50x48.png</normaloff>:/fax50x48.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Fax Residêncial</string>
+       </property>
+       <property name="icon">
+        <iconset resource="application.qrc">
+         <normaloff>:/fax50x48.png</normaloff>:/fax50x48.png</iconset>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLineEdit" name="lineEditCEP">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>219</y>
+        <width>91</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>CEP</string>
+      </property>
+      <property name="statusTip">
+       <string/>
+      </property>
+      <property name="inputMask">
+       <string>00.000-000</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>871</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="Line" name="line_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>254</y>
+        <width>871</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="Line" name="line_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>402</y>
+        <width>871</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>Histórico</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <widget class="QTextEdit" name="textEditHistorico">
+        <property name="placeholderText">
+         <string>Coloque aqui informações que poderiam facilitar pela busca por esse documento</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>checkBoxStatus</tabstop>
+  <tabstop>radioButtonEmpresa</tabstop>
+  <tabstop>radioButtonCliente</tabstop>
+  <tabstop>radioButtonFornecedor</tabstop>
+  <tabstop>radioButtonProjetos</tabstop>
+  <tabstop>radioButtonOutros</tabstop>
+  <tabstop>radioButtonSimples</tabstop>
+  <tabstop>lineEditNome</tabstop>
+  <tabstop>lineEditAlias</tabstop>
+  <tabstop>lineEditEnder</tabstop>
+  <tabstop>lineEditBair</tabstop>
+  <tabstop>lineEditCity</tabstop>
+  <tabstop>comboBoxUF</tabstop>
+  <tabstop>lineEditCEP</tabstop>
+  <tabstop>comboBoxTel1</tabstop>
+  <tabstop>lineEditTelNum1</tabstop>
+  <tabstop>comboBoxTel3</tabstop>
+  <tabstop>lineEditTelNum3</tabstop>
+  <tabstop>comboBoxTel2</tabstop>
+  <tabstop>lineEditTelNum2</tabstop>
+  <tabstop>comboBoxTel4</tabstop>
+  <tabstop>lineEditTelNum4</tabstop>
+  <tabstop>lineEditContato1</tabstop>
+  <tabstop>lineEditEmail1</tabstop>
+  <tabstop>lineEditContato2</tabstop>
+  <tabstop>lineEditEmail2</tabstop>
+  <tabstop>tabWidgetModelos</tabstop>
+  <tabstop>lineEditCNPJ</tabstop>
+  <tabstop>lineEditIE</tabstop>
+  <tabstop>lineEditIM</tabstop>
+  <tabstop>lineEditCPF</tabstop>
+  <tabstop>lineEditRG</tabstop>
+  <tabstop>lineEditURL</tabstop>
+  <tabstop>lineEditObraCod</tabstop>
+  <tabstop>comboBoxObraCliente</tabstop>
+  <tabstop>lineEditObraCEI</tabstop>
+  <tabstop>spinBoxbObraCrono</tabstop>
+  <tabstop>lineEditOutEspec</tabstop>
+  <tabstop>lineEditOutNFld1</tabstop>
+  <tabstop>lineEditOutDFld1</tabstop>
+  <tabstop>lineEditOutNFld2</tabstop>
+  <tabstop>lineEditOutDFld2</tabstop>
+  <tabstop>lineEditOutObs</tabstop>
+  <tabstop>textEditHistorico</tabstop>
+ </tabstops>
+ <resources>
+  <include location="application.qrc"/>
+ </resources>
+ <connections/>
+</ui>

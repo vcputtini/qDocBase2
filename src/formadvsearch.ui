@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <author>Puttini, Volnei C.</author>
+ <class>AdvSearch</class>
+ <widget class="QWidget" name="AdvSearch">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1140</width>
+    <height>608</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Busca Avançada</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="application.qrc">
+    <normaloff>:/docbase.png</normaloff>:/docbase.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QLineEdit {
+    border: 1px solid gray;
+    border-radius: 5px;
+	border-style: outset;
+	/*background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(192, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));*/
+	
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(210, 210, 210 255), stop:1 rgba(255, 255, 255, 255));
+}
+
+QLineEdit::hover {
+	selection-background-color: rgb(46, 91, 255);
+    border: 1px outset rgb(44, 114, 199);
+}</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_8">
+   <item row="1" column="1">
+    <widget class="QGraphicsView" name="graphicsViewImages"/>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="labelEntity">
+     <property name="text">
+      <string>Ctrl-E para selecionar uma Entidade</string>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::LinksAccessibleByMouse</set>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QSplitter" name="splitterSearch">
+     <property name="styleSheet">
+      <string notr="true">QSplitter::handle {
+     image: url(&quot;:/splitter.png&quot;);
+ }
+
+QSplitter::handle:horizontal {
+     width: 5px;
+ }
+
+ QSplitter::handle:vertical {
+     height: 5px;
+ }
+
+QSplitter::handle:pressed {
+     url(&quot;:/splitter_pressed.png&quot;);
+ }
+</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <widget class="QFrame" name="frameBusca">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>850</width>
+        <height>420</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>850</width>
+        <height>420</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QGroupBox" name="groupBoxSort">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>191</width>
+         <height>65</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Ordenação</string>
+       </property>
+       <widget class="QComboBox" name="comboBoxSortFields">
+        <property name="geometry">
+         <rect>
+          <x>12</x>
+          <y>30</y>
+          <width>121</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBoxSortType">
+        <property name="geometry">
+         <rect>
+          <x>139</x>
+          <y>31</y>
+          <width>44</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/sortascending.png&quot;/&gt; A0-A9&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;:/sortdescending.png&quot;/&gt; Z9-A0&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="application.qrc">
+          <normaloff>:/sortascending.png</normaloff>:/sortascending.png</iconset>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBoxSecurity">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>180</y>
+         <width>149</width>
+         <height>94</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Segurança</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <widget class="QLineEdit" name="lineEditOperator">
+        <property name="geometry">
+         <rect>
+          <x>12</x>
+          <y>32</y>
+          <width>125</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="maxLength">
+         <number>15</number>
+        </property>
+        <property name="placeholderText">
+         <string>Operador</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEditPass">
+        <property name="geometry">
+         <rect>
+          <x>12</x>
+          <y>59</y>
+          <width>125</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="maxLength">
+         <number>15</number>
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+        <property name="placeholderText">
+         <string>Senha</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBoxDateRange">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>280</y>
+         <width>131</width>
+         <height>131</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="title">
+        <string>Períodos</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <widget class="QDateEdit" name="dateEditEnd">
+        <property name="geometry">
+         <rect>
+          <x>12</x>
+          <y>93</y>
+          <width>98</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Informe a data final</string>
+        </property>
+        <property name="statusTip">
+         <string>Data final para seleção dos documentos que serão selecionados&quot;</string>
+        </property>
+        <property name="displayFormat">
+         <string>dd/MM/yyyy</string>
+        </property>
+        <property name="calendarPopup">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QDateEdit" name="dateEditBegin">
+        <property name="geometry">
+         <rect>
+          <x>12</x>
+          <y>61</y>
+          <width>98</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Informe a data inicial</string>
+        </property>
+        <property name="statusTip">
+         <string>Data inicial para seleção dos documentos que serão selecionados</string>
+        </property>
+        <property name="displayFormat">
+         <string>dd/MM/yyyy</string>
+        </property>
+        <property name="calendarPopup">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBoxDateType">
+        <property name="geometry">
+         <rect>
+          <x>12</x>
+          <y>32</y>
+          <width>161</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Cadastro</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBoxDataDoc">
+       <property name="geometry">
+        <rect>
+         <x>410</x>
+         <y>10</y>
+         <width>280</width>
+         <height>91</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Documento</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <widget class="QLineEdit" name="lineEditDocNumBegin">
+        <property name="geometry">
+         <rect>
+          <x>12</x>
+          <y>32</y>
+          <width>125</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="inputMethodHints">
+         <set>Qt::ImhDigitsOnly</set>
+        </property>
+        <property name="maxLength">
+         <number>10</number>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="placeholderText">
+         <string>Número inicial</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEditDocNumEnd">
+        <property name="geometry">
+         <rect>
+          <x>143</x>
+          <y>32</y>
+          <width>125</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="inputMethodHints">
+         <set>Qt::ImhDigitsOnly</set>
+        </property>
+        <property name="maxLength">
+         <number>10</number>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="placeholderText">
+         <string>Número final</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEditDocValueBegin">
+        <property name="geometry">
+         <rect>
+          <x>12</x>
+          <y>59</y>
+          <width>125</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="inputMethodHints">
+         <set>Qt::ImhNone</set>
+        </property>
+        <property name="maxLength">
+         <number>12</number>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="placeholderText">
+         <string>Valor R$ inicial</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEditDocValueEnd">
+        <property name="geometry">
+         <rect>
+          <x>143</x>
+          <y>59</y>
+          <width>125</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="inputMethodHints">
+         <set>Qt::ImhNone</set>
+        </property>
+        <property name="maxLength">
+         <number>12</number>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="placeholderText">
+         <string>Valor R$ final</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBoxHist">
+       <property name="geometry">
+        <rect>
+         <x>193</x>
+         <y>180</y>
+         <width>611</width>
+         <height>121</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Histórico</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <widget class="QCheckBox" name="checkBoxExact">
+        <property name="geometry">
+         <rect>
+          <x>12</x>
+          <y>90</y>
+          <width>251</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Exatamente igual</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="labelNote1">
+        <property name="geometry">
+         <rect>
+          <x>12</x>
+          <y>30</y>
+          <width>591</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Informe uma frase ou palavra que deverá ser pesquisada dentro do campo histórico. </string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEditPhrase">
+        <property name="geometry">
+         <rect>
+          <x>12</x>
+          <y>60</y>
+          <width>591</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="maxLength">
+         <number>1000</number>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBoxDpto">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>10</y>
+         <width>191</width>
+         <height>65</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Departamentos</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_6">
+        <item row="0" column="0">
+         <widget class="QComboBox" name="comboBoxDeptos"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QGroupBox" name="groupBoxCustomFields">
+       <property name="geometry">
+        <rect>
+         <x>193</x>
+         <y>320</y>
+         <width>611</width>
+         <height>91</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Campos Personalizados</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <widget class="QComboBox" name="comboBoxFieldNames">
+        <property name="geometry">
+         <rect>
+          <x>12</x>
+          <y>31</y>
+          <width>181</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="sizeAdjustPolicy">
+         <enum>QComboBox::AdjustToMinimumContentsLength</enum>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEditDataField">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>30</y>
+          <width>401</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBoxCFExact">
+        <property name="geometry">
+         <rect>
+          <x>12</x>
+          <y>60</y>
+          <width>271</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Exatamente igual</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBoxRelatoionship">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>100</y>
+         <width>681</width>
+         <height>57</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Entidade Relacionada</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QLabel" name="labelRelationShip">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="Line" name="line">
+       <property name="geometry">
+        <rect>
+         <x>167</x>
+         <y>180</y>
+         <width>21</width>
+         <height>231</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QTableView" name="tableViewBusca">
+      <property name="minimumSize">
+       <size>
+        <width>192</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>comboBoxSortFields</tabstop>
+  <tabstop>checkBoxSortType</tabstop>
+  <tabstop>groupBoxDpto</tabstop>
+  <tabstop>comboBoxDeptos</tabstop>
+  <tabstop>groupBoxDataDoc</tabstop>
+  <tabstop>lineEditDocNumBegin</tabstop>
+  <tabstop>lineEditDocNumEnd</tabstop>
+  <tabstop>lineEditDocValueBegin</tabstop>
+  <tabstop>lineEditDocValueEnd</tabstop>
+  <tabstop>groupBoxRelatoionship</tabstop>
+  <tabstop>groupBoxSecurity</tabstop>
+  <tabstop>lineEditOperator</tabstop>
+  <tabstop>lineEditPass</tabstop>
+  <tabstop>groupBoxDateRange</tabstop>
+  <tabstop>checkBoxDateType</tabstop>
+  <tabstop>dateEditBegin</tabstop>
+  <tabstop>dateEditEnd</tabstop>
+  <tabstop>groupBoxHist</tabstop>
+  <tabstop>lineEditPhrase</tabstop>
+  <tabstop>checkBoxExact</tabstop>
+  <tabstop>groupBoxCustomFields</tabstop>
+  <tabstop>comboBoxFieldNames</tabstop>
+  <tabstop>lineEditDataField</tabstop>
+  <tabstop>checkBoxCFExact</tabstop>
+  <tabstop>tableViewBusca</tabstop>
+  <tabstop>graphicsViewImages</tabstop>
+ </tabstops>
+ <resources>
+  <include location="application.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>tableViewBusca</sender>
+   <signal>clicked(QModelIndex)</signal>
+   <receiver>AdvSearch</receiver>
+   <slot>tableViewBusca_clicked(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>192</x>
+     <y>496</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>4</x>
+     <y>454</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>tableViewBusca_clicked(QModelIndex)</slot>
+ </slots>
+</ui>
