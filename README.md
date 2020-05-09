@@ -29,7 +29,7 @@ We're available to hire for analysis and implementation of possible adaptations 
 ### Help Menu
 ![](doc/screenshots/menu-ajuda.png)
 
-### Registrarion of Entities
+### Registration of Entities
 ![](doc/screenshots/cad-ent.png)
 
 ### Document Registration
