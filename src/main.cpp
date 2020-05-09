@@ -3,7 +3,7 @@
  *      Volnei Cervi Puttini.  All rights reserved.                        *
  *      vcputtini@gmail.com                                                *
  *                                                                         *
- * This file is part of the qDocbase project, a images/documents           *
+ * This file is part of the qDocbase2 project, a images/documents           *
  * database program.                                                       *
  *                                                                         *
  * Redistribution and use in source and binary forms, with or without      *
@@ -91,7 +91,7 @@ int main(int argc, char *argv[])
       qDocBase * mw = new qDocBase();
       if(!db.open() ) {
          if(db.lastError().nativeErrorCode() == 2003) {
-            QMessageBox::critical(mw,"DocBase",
+            QMessageBox::critical(mw,"qDocBase2",
                  QObject::tr("Você deve configurar os parâmetros de conexão com o banco de dados."
                              " Feito isto reinicie o aplicativo.\n\n")+db.lastError().text(),
                  QMessageBox::Close);

@@ -3,7 +3,7 @@
  *      Volnei Cervi Puttini.  All rights reserved.                        *
  *      vcputtini@gmail.com                                                *
  *                                                                         *
- * This file is part of the qDocbase project, a images/documents           *
+ * This file is part of the qDocbase2 project, a images/documents           *
  * database program.                                                       *
  *                                                                         *
  * Redistribution and use in source and binary forms, with or without      *
@@ -733,7 +733,7 @@ void AdvSearch::executeSearch()
 void ItemInterceptDoubleClick::mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event)
 {
     if(isExecutable(fname)) {
-        emit openUrlError(tr("Para sua segurança o DocBase não permite a execução direta de programas.") );
+        emit openUrlError(tr("Para sua segurança o qDocBase2 não permite a execução direta de programas.") );
         event->ignore();
         return;
     }

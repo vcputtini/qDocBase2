@@ -3,7 +3,7 @@
  *      Volnei Cervi Puttini.  All rights reserved.                        *
  *      vcputtini@gmail.com                                                *
  *                                                                         *
- * This file is part of the qDocbase project, a images/documents           *
+ * This file is part of the qDocbase2 project, a images/documents           *
  * database program.                                                       *
  *                                                                         *
  * Redistribution and use in source and binary forms, with or without      *
@@ -140,7 +140,7 @@ void PrintSelectedImages::header(QRectF r, const QString title)
 
 
     vpPainter.setFont(QFont(font14B, vpPainter.device()));
-    vpPainter.drawText(50.0, lineSpacing, tr("Docbase"));
+    vpPainter.drawText(50.0, lineSpacing, tr("qDocbase2"));
 
     vpPainter.setFont(QFont(font9, vpPainter.device()));
     vpPainter.drawText( 50.0, fontM14B.height()+lineSpacing, subTitle());

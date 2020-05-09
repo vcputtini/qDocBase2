@@ -12,7 +12,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>DocBase</string>
+   <string>qDocBase2</string>
   </property>
   <property name="windowIcon">
    <iconset resource="application.qrc">

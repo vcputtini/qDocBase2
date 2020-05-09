@@ -1,10 +1,10 @@
-# DocBase - Document Database Manager
+# qDocBase2 - Document Database Manager
 
 This utility software aims to manage a professional database of digital
 documents in order to provide organization, speed in searches and reliability of
 information.
 
-The DocBase was developed using the Qt Framework in C++ exclusively, initially about to run under Linux, but later it was recoded to be correctly compiled and run under the Windows platform.
+The qDocBase2 was developed using the Qt Framework in C++ exclusively, initially about to run under Linux, but later it was recoded to be correctly compiled and run under the Windows platform.
 It makes it possible to save as a record any type of desired file format, such
 as .docx, .xlsx, .txt, .pdf and so on.
 In addition to the search, it allows you to print reports with image files and

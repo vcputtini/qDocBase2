@@ -3,7 +3,7 @@
  *      Volnei Cervi Puttini.  All rights reserved.                        *
  *      vcputtini@gmail.com                                                *
  *                                                                         *
- * This file is part of the qDocbase project, a images/documents           *
+ * This file is part of the qDocbase2 project, a images/documents           *
  * database program.                                                       *
  *                                                                         *
  * Redistribution and use in source and binary forms, with or without      *
@@ -88,7 +88,7 @@ DialogAbout::DialogAbout(QWidget *parent) :
 
     qreal linha = pixTmp.height()+20;
     textItem = new QGraphicsTextItem;
-    sText = tr("DocBase: Document Database Manager");
+    sText = tr("qDocBase2: Document Database Manager");
     textItem->setTransform(tf);
     textItem->setFont(fontArial15);
     textItem->setDefaultTextColor(Qt::white);

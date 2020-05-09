@@ -3,7 +3,7 @@
  *      Volnei Cervi Puttini.  All rights reserved.                        *
  *      vcputtini@gmail.com                                                *
  *                                                                         *
- * This file is part of the qDocbase project, a images/documents           *
+ * This file is part of the qDocbase2 project, a images/documents           *
  * database program.                                                       *
  *                                                                         *
  * Redistribution and use in source and binary forms, with or without      *
@@ -143,10 +143,10 @@ void PrintImage::header(QRectF r, const QString title)
   vpPainter.setBrush(QColor("#e6e6e6")); // cinza 10% HTML #e6e6e6 RGB 230,230,230
   vpPainter.drawRect(r.x(), r.y(), pageWidth(),  lineSpacing+100.0);
   vpPainter.setFont(QFont(font14B, vpPainter.device()));
-  vpPainter.drawText(50.0, lineSpacing, tr("Docbase"));
+  vpPainter.drawText(50.0, lineSpacing, tr("qDocbase2"));
 
   vpPainter.setFont(QFont(font11B, vpPainter.device()));
-  qreal fw = fontM14B.width("DocBase");
+  qreal fw = fontM14B.width("qDocBase2");
   vpPainter.drawText( fw+100.00, lineSpacing," - "+title);
 
   vpPainter.setBrush(Qt::NoBrush);

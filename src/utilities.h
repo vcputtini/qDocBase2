@@ -72,7 +72,7 @@ using namespace std;
  * @author Volnei Cervi Puttini <vcputtini@gmail.com>
  */
 namespace NS_UTILITIES {
-        static const QString NAMEPROGRAM = "DocBase";
+        static const QString NAMEPROGRAM = "qDocBase2";
 
         enum TIPO_ENTIDADES { EnEmpresa, EnCliente, EnFornecedor,
                               EnProjObras, EnOutros, EnTipoSimples,

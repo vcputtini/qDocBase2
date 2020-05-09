@@ -1,4 +1,7 @@
 %Changelog%
+* 13 May 2020 Volnei C. Puttini <vcputtini@gmail.com>
++ Oficial program name now is: qDocBase2.
+
 * 16 Oct 2019 Volnei C. Puttini <vcputtini@gmail.com>
 + New Release: 2.1.2
 + qdocbase.cpp

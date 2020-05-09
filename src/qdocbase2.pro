@@ -52,7 +52,7 @@ DEFINES += "VERSION_NUMBER=$${GVERSION}"
 }
 
 # Official name of the program
-PROGNAME  = \\\"DocBase\\\"
+PROGNAME  = \\\"qDocBase2\\\"
 DEFINES += "PROGRAM_NAME=$${PROGNAME}"
 
 #TRANSLATIONS = ../translations/en_US.ts

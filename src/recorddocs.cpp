@@ -3,7 +3,7 @@
  *      Volnei Cervi Puttini.  All rights reserved.                        *
  *      vcputtini@gmail.com                                                *
  *                                                                         *
- * This file is part of the qDocbase project, a images/documents           *
+ * This file is part of the qDocbase2 project, a images/documents           *
  * database program.                                                       *
  *                                                                         *
  * Redistribution and use in source and binary forms, with or without      *
@@ -1034,11 +1034,11 @@ void RecordDocs::clearReg()
 
     if(CFG.keepEntity() ) {
         if(__FIRSTRUN__) {
-            labelEntity->setText(tr("Ctrl-E para selecionar uma Entidade"));
+            labelEntity->setText(tr("Ctrl-E selecionar Entidade ou Ctrl-F pesquisa por documento"));
             labelEntityIdentify->clear();
         }
     } else {
-        labelEntity->setText(tr("Ctrl-E para selecionar uma Entidade"));
+        labelEntity->setText(tr("Ctrl-E selecionar Entidade ou Ctrl-F pesquisa por documento"));
         labelEntityIdentify->clear();
     }
     __FIRSTRUN__ = false;
@@ -1354,7 +1354,7 @@ void RecordDocs::listViewFiles_doubleClicked(QModelIndex idx)
 
     if(isExecutable(idx.data(Qt::UserRole).toString())) {
         QMessageBox::warning( this , PROGRAM_NAME,
-          tr("Para sua segurança o DocBase não permite a execução direta de programas.\n\n"),QMessageBox::Ok);
+          tr("Para sua segurança o qDocBase2 não permite a execução direta de programas.\n\n"),QMessageBox::Ok);
         return;
     }
 

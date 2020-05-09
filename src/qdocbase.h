@@ -173,7 +173,7 @@ private:
 
   // Diversos
   void semPermissao() {
-         QMessageBox::warning(this , QString("DocBase"),
+         QMessageBox::warning(this , QString("qDocBase2"),
               QString("Você não possui permissão para acessar este módulo."),
                               QMessageBox::Close);
   }

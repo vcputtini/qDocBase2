@@ -3,7 +3,7 @@
  *      Volnei Cervi Puttini.  All rights reserved.                        *
  *      vcputtini@gmail.com                                                *
  *                                                                         *
- * This file is part of the qDocbase project, a images/documents           *
+ * This file is part of the qDocbase2 project, a images/documents           *
  * database program.                                                       *
  *                                                                         *
  * Redistribution and use in source and binary forms, with or without      *
@@ -260,8 +260,8 @@ void qDocBase::createActions()
      // Ajuda
      //help-about
      actionAbout = new QAction(QIcon::fromTheme("help-about", QIcon(":/messagebox_info.png")),
-                               tr("Sobre DocBase..."), this);
-     actionAbout->setStatusTip(tr("Informações sobre o DocBase"));
+                               tr("Sobre ..."), this);
+     actionAbout->setStatusTip(tr("Informações sobre o qDocBase2"));
      connect(actionAbout, SIGNAL(triggered()), this, SLOT(actionAbout_triggered()));
 
 
