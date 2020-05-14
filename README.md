@@ -55,6 +55,6 @@ We're available to hire for analysis and implementation of possible adaptations 
 
 
 - Windows is registered trademark of Microsoft Inc. USA.
-- Linux is registered trademark of Linux Torvalds.
+- Linux is registered trademark of Linus Torvalds.
 - Qt is registered trademark of Qt Company.
 - Any other brand referenced by us belongs to their respectives owners.
