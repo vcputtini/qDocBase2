@@ -88,7 +88,11 @@
 #include <QFutureWatcher>
 #include <QFuture>
 
+<<<<<<< HEAD
 #include "vcplib/vcplib2.h"
+=======
+#include "../vcplib2/vcplib2.h"
+>>>>>>> f3834ea18c73921b0cb662a98523ccf016904561
 #include "utilities.h"
 #include "configuracao.h"
 
