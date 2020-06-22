@@ -89,6 +89,7 @@
 #include <QFuture>
 
 #include "vcplib/vcplib2.h"
+
 #include "utilities.h"
 #include "configuracao.h"
 

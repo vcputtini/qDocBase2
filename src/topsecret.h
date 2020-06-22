@@ -46,7 +46,9 @@
 #include <QSqlQueryModel>
 #include <QtSql>
 
+
 #include "vcplib/vcplib2.h"
+
 #include "utilities.h"
 
 using namespace NS_UTILITIES;

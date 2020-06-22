@@ -64,7 +64,9 @@
 #include <QLineEdit>
 #include <QComboBox>
 
+
 #include "vcplib/vcplib2.h"
+
 #include "utilities.h"
 #include "configuracao.h"
 #include "sysactivity.h"

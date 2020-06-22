@@ -10,6 +10,6 @@ TEMPLATE = subdirs
 CONFIG += release
 
 SUBDIRS += \
-   src/qdocbase2.pro
-	
+    src/qdocbase2.pro
+
 qdocbas2.subdir = src/

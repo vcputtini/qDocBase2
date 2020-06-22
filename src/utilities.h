@@ -57,7 +57,9 @@
 #include <QtSql>
 #include <QtSql/QSqlQuery>
 
+
 #include "vcplib/vcplib2.h"
+
 #include "configuracao.h"
 #include "typeimage.h"
 
