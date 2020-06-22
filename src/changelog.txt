@@ -1,4 +1,8 @@
 %Changelog%
+* 22 Jul 2020 Volnei C. Puttini <vcputtini@gmail.com>
++ The lib VCPLib2 has been merged into main source tree to
+  facilitate general system maintenance.
+
 * 13 May 2020 Volnei C. Puttini <vcputtini@gmail.com>
 + Oficial program name now is: qDocBase2.
 

@@ -45,7 +45,7 @@
 #include <QSettings>
 #include <QLocale>
 
-#include "../vcplib2/vcplib2.h"
+#include "vcplib/vcplib2.h"
 #include <utilities.h>
 
 /**

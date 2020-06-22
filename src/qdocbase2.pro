@@ -12,16 +12,6 @@ message(This program uses C++11 features)
 CONFIG += c++11
 # --------------------------------------------------
 
-message(vcplib2: This library is required for the application to work properly.)
-win32: {
-    QT += winextras
-    LIBS += -lmysql -lvcplib22
-    CONFIG += release
-# CONFIG += console
-}
-unix : LIBS += -lvcplib2
-
-
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
 # depend on your compiler). Please consult the documentation of the
@@ -69,6 +59,14 @@ SOURCES += qdocbase.cpp \
     qvpmultifiles.cpp \
     utilities.cpp \
     tvfinddocs.cpp \
+    vcplib/cnpj.cpp \
+    vcplib/cpf.cpp \
+    vcplib/vcpdoublevalidator.cpp \
+    vcplib/vcpftp.cpp \
+    vcplib/vcplib2.cpp \
+    vcplib/vcplowervalidator.cpp \
+    vcplib/vcpmdiarea.cpp \
+    vcplib/vcpuppervalidator.cpp \
     vstandarditemmodel_p.cpp \
     recordentity.cpp \
     dialogconfig.cpp \
@@ -96,6 +94,14 @@ HEADERS += qdocbase.h \
     qvpmultifiles.h \
     utilities.h \
     tvfinddocs.h \
+    vcplib/cnpj.h \
+    vcplib/cpf.h \
+    vcplib/vcpdoublevalidator.h \
+    vcplib/vcpftp.h \
+    vcplib/vcplib2.h \
+    vcplib/vcplowervalidator.h \
+    vcplib/vcpmdiarea.h \
+    vcplib/vcpuppervalidator.h \
     vstandarditemmodel_p.h \
     recordentity.h \
     dialogconfig.h \

@@ -1,9 +1,0 @@
-* 04 Oct 2019  Volnei C. Puttini <vcputtini@gmail.com.br>
-+ vcpmdiarea: Remocao da apresentacao de informacoes de
-  registro do programa, deixando apenas como parametro
-  o nome do programa em uso.
-
-* 26 Sep 2019  Volnei C. Puttini <vcputtini@gmail.com.br>
-+ Compilacao no Qt 5.13.0
-+ Ajustes no codigo retirando trUtf8() obsoleto por tr().
-+ Inclusao como subprojeto do qDocBase2

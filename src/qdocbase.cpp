@@ -43,8 +43,9 @@ qDocBase::qDocBase(QWidget* parent, Qt::WindowFlags fl)
 : QMainWindow( parent, fl ), Ui::MWDocBase()
 {
 	setupUi(this);
-
+    QString s="";
     mdiArea = new vcpMdiArea(this, QString("%1").arg(PROGRAM_NAME));
+
     setCentralWidget(mdiArea);
 
 #ifdef Q_OS_WIN
@@ -64,7 +65,7 @@ qDocBase::qDocBase(QWidget* parent, Qt::WindowFlags fl)
     spinBoxFindStartYear->setValue(QDate::currentDate().year());
     spinBoxFindEndYear->setValue(QDate::currentDate().year());
 
-        /**
+    /**
      * @brief
      *      Sempre que a janela for dock for chamada e estiver visivel
      *      atualiza a view com os dados das entidades para pesquisa

@@ -61,8 +61,9 @@
 
 #include <QDebug>
 
-#include "../vcplib2/vcplib2.h"
-//#include "deflicenca.h"
+#include "vcplib/vcplib2.h"
+#include "vcplib/vcpmdiarea.h"
+
 #include "utilities.h"
 #include "tventity.h"
 #include "tvfinddocs.h"
@@ -78,6 +79,8 @@
 // Janelas secondarias
 #include "dialogabout.h"
 #include "configuracao.h"
+
+
 
 extern QSqlDatabase db;
 extern QSqlError    sqlError;
@@ -95,7 +98,7 @@ class qDocBase : public QMainWindow, private Ui::MWDocBase
 public:
   qDocBase(QWidget* parent = nullptr, Qt::WindowFlags fl = nullptr );
   ~qDocBase();
-  /*$PUBLIC_FUNCTIONS$*/
+  /*$PUBLIC_FUNCTIONS$*/ 
 
 private:
   vcpMdiArea* mdiArea;
