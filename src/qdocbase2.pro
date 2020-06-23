@@ -5,6 +5,10 @@
 # ****************************************************************
 QT += core sql network xml concurrent widgets printsupport gui
 
+win32: {
+QT += winextras
+}
+
 CONFIG += release
 
 # --------------------------------------------------

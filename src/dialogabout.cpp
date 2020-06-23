@@ -121,7 +121,7 @@ DialogAbout::DialogAbout(QWidget *parent) :
 
 
     text[2] = new QGraphicsTextItem;
-    sText = tr("Versao: %0").arg(VERSION_NUMBER);   // From Git. Definido no arquivo qdocbase2.pro
+    sText = tr("Version: %0").arg(VERSION_NUMBER);   // From Git. Definido no arquivo qdocbase2.pro
     text[2]->setTransform(tf);
     text[2]->setFont(fontArial10);
     text[2]->setDefaultTextColor(Qt::black);
@@ -143,13 +143,11 @@ DialogAbout::DialogAbout(QWidget *parent) :
     QStringList lText;
     lText << verGCC
           << QSysInfo::prettyProductName() << ""
-          << tr("Utiliza o SGDB: MySQL(tm)/MariaDB(tm)")
+          << tr("Use: MySQL(tm)/MariaDB(tm)")
           << "" << "" << ""
           << tr("The program is provided AS IS whith NO WARRANTY OF ANY KIND")
           << tr("INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND")
           << tr("FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.");
-
-
 
     int i=2;
     linha+=fmArial10.lineSpacing()*2;
