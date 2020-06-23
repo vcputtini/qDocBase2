@@ -54,8 +54,8 @@
 
 // Windows Extras ---------------
 #ifdef Q_OS_WIN
-#include <QWinTaskbarButton>
-#include <QWinTaskbarProgress>
+#include <QtWinExtras/QWinTaskbarButton>
+#include <QtWinExtras/QWinTaskbarProgress>
 #endif
 // -------------------------------
 
