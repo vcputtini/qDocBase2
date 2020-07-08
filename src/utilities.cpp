@@ -499,7 +499,7 @@ QString vcpString::toStandarize()
     QList<QString> words;
     QString aux;
 
-    words = _str.split(QChar(' '), QString::SkipEmptyParts, Qt::CaseInsensitive);
+    words = _str.split(QChar(' '), Qt::SkipEmptyParts, Qt::CaseInsensitive);
 
     QList<QString>::iterator it;
     for(it = words.begin(); it != words.end(); ++it) {
