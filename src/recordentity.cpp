@@ -885,8 +885,8 @@ void RecordEntity::updateReg()
         q.bindValue(":ET_OBCLI",  (!comboBoxObraCliente->currentText().isEmpty() ?
                                    comboBoxObraCliente->currentText().section('#',1,1).toInt() : 0) );
     } else {
-        q.bindValue(":ET_OBCOD", "" );
-        q.bindValue(":ET_OBANO", "" );
+        q.bindValue(":ET_OBCOD", "0" );
+        q.bindValue(":ET_OBANO", "0" );
         q.bindValue(":ET_OBCLI", "0");
     }
     q.bindValue(":ET_OBCEI", lineEditObraCEI->text());

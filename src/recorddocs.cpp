@@ -502,7 +502,7 @@ void RecordDocs::identifyEntity(QModelIndex idx)
 
             labelImageName->setText(qmodel.record(0).value("DL_FNAME").toString() );
 
-            graphicsViewImages->resetMatrix();
+            graphicsViewImages->resetTransform();
             scene = new QGraphicsScene(graphicsViewImages);
             TypeImage ti;
             if( ti.isImageViewable(qmodel.record(0).value("DL_FNAME").toString())) {
@@ -1322,7 +1322,7 @@ void RecordDocs::listViewFiles_clicked(QModelIndex idx)
     QImage img;
 
     scene = new QGraphicsScene(graphicsViewImages);
-    graphicsViewImages->resetMatrix();
+    graphicsViewImages->resetTransform();
 
     TypeImage ti;
     if(ti.isImageViewable(filePicNameCompl)) {

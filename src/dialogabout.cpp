@@ -44,7 +44,7 @@ DialogAbout::DialogAbout(QWidget *parent) :
 {
     setupUi(this);
 
-    graphicsViewAbout->resetMatrix();
+    graphicsViewAbout->resetTransform();
 
     QFont fontArial15("Arial", 15, QFont::Bold);
     QFont fontArial12("Arial", 12, QFont::Normal);

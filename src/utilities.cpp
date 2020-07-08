@@ -57,7 +57,7 @@ void uZoomImage(ZoomImage zi, QGraphicsView *gv)
         if( gv->transform().m11() < 2.15)
             gv->scale(1.2,1.2);
         else {
-            gv->resetMatrix();
+            gv->resetTransform();
             gv->scale(.5,.5);
         }
         break;
@@ -65,7 +65,7 @@ void uZoomImage(ZoomImage zi, QGraphicsView *gv)
         if( gv->transform().m11() > 0.02) {
             gv->scale(.5,.5);
         } else {
-            gv->resetMatrix();
+            gv->resetTransform();
             gv->scale(.2,.2);
         }
         break;

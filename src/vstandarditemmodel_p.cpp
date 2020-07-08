@@ -52,14 +52,14 @@ QVariant VStandardItemModel_P::data(const QModelIndex &index, int role) const
   if(role ==  Qt::BackgroundRole) { // trata plano de fundo da linha
       // Se forem nomes das classes pinta de cinza claro
       if( uClassesOfEntities().contains( index.data().toString() ))
-          return qVariantFromValue(QColor(Qt::lightGray));
+          return QVariant::fromValue(QColor(Qt::lightGray));
 
       // coloca as linhas pares e impares nas cores escolhidas pelo usuario
       if(alterColor) {
         if(index.row() % 2 == 1)
-            return qVariantFromValue(QColor(255,255,204)); // odd
+            return QVariant::fromValue(QColor(255,255,204)); // odd
         else
-            return qVariantFromValue(QColor(255,255,104) ); // even
+            return QVariant::fromValue(QColor(255,255,104) ); // even
       }
   }
 
