@@ -6,6 +6,10 @@
 + Fixes: warning: ‘QVariant qVariantFromValue(const T&) [with T = QColor]’
   is deprecated: Use QVariant::fromValue() instead. [-Wdeprecated-declarations]
   return qVariantFromValue(QColor(255,255,204)); // odd
++ Fixes:
+   warning: ‘QStringList QString::split(QChar, QString::SplitBehavior,
+   Qt::CaseSensitivity) const’ is deprecated: Use Qt::SplitBehavior variant instead [-Wdeprecated-declarations]
+   words = _str.split(QChar(' '), QString::SkipEmptyParts, Qt::CaseInsensitive);
 + Fixes: recordentity.cpp
   The field cannot be empty/null, it must be zero, otherwise it causes an
   error while save the record.
