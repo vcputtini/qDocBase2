@@ -1,4 +1,7 @@
 %Changelog%
+* 29 Jul 2020 Volnei C. Puttini <vcputtini@gmail.com>
++ Fixes: warning: tventity.cpp
+
 * 08 Jul 2020 Volnei C. Puttini <vcputtini@gmail.com>
 + Fixes: warning: ‘void QGraphicsView::resetMatrix()’
   is deprecated: Use resetTransform() [-Wdeprecated-declarations]
