@@ -246,7 +246,7 @@ void tvEntity::process(void)
            child->setEditable( false );
            if(iState == Qt::PartiallyChecked && query.value(2).toInt()==0)
                child->setIcon(QPixmap(":/reddiamd.png"));
-           else if(iState == Qt::PartiallyChecked && query.value(2).toInt()==1 || iState == Qt::Checked)
+           else if((iState == Qt::PartiallyChecked && query.value(2).toInt()==1) || (iState == Qt::Checked) )
                child->setIcon(QPixmap(":/grndiamd.png"));
            else if(iState == Qt::Unchecked)
                child->setIcon(QPixmap(":/reddiamd.png"));
