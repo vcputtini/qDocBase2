@@ -139,9 +139,14 @@ DialogAbout::DialogAbout(QWidget *parent) :
              arg(__GNUC_MINOR__).arg(__GNUC_PATCHLEVEL__);
 #endif
 
+    QString archsys=tr("Arch: x86_32;");
+#ifdef Q_PROCESSOR_X86_64
+        archsys=tr("Arch: x86_64");
+#endif
 
     QStringList lText;
     lText << verGCC
+          << archsys
           << QSysInfo::prettyProductName() << ""
           << tr("Use: MySQL(tm)/MariaDB(tm)")
           << "" << "" << ""

@@ -1,4 +1,7 @@
 %Changelog%
+* 13 oCT 2020 Volnei C. Puttini <vcputtini@gmail.com>
++ Main change: Uses 64bits QMARIADB SQL driver by default.
++ dialogabout.cpp: Now, informe processor architecture, too.
 * 08 Jul 2020 Volnei C. Puttini <vcputtini@gmail.com>
 + Fixes: warning: ‘void QGraphicsView::resetMatrix()’
   is deprecated: Use resetTransform() [-Wdeprecated-declarations]

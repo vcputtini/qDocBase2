@@ -75,9 +75,8 @@ int main(int argc, char *argv[])
 
       QSettings settings(lib2.organization(), NS_UTILITIES::SettingsAppName);
 
-      db = QSqlDatabase::addDatabase("QMYSQL");
+      db = QSqlDatabase::addDatabase("QMARIADB");
       db.setHostName( settings.value("hostname").toString() ); // see source: configuracao.cpp
-      db.setConnectOptions("CLIENT_COMPRESS");
 
 #ifdef TEST
       db.setDatabaseName("test");

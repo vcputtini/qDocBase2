@@ -96,7 +96,7 @@ class qDocBase : public QMainWindow, private Ui::MWDocBase
   Q_OBJECT
 
 public:
-  qDocBase(QWidget* parent = nullptr, Qt::WindowFlags fl = nullptr );
+  qDocBase(QWidget* parent = nullptr, Qt::WindowFlags fl = Qt::WindowFlags() );
   ~qDocBase();
   /*$PUBLIC_FUNCTIONS$*/ 
 
