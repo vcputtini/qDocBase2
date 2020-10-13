@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 %Changelog%
 * 13 oCT 2020 Volnei C. Puttini <vcputtini@gmail.com>
 + Main change: Uses 64bits QMARIADB SQL driver by default.
@@ -563,3 +564,570 @@
   A versao de producao sera iniciada em 2.stable01, ate la as
   versoes serao: 2alpha e 2beta
 
+=======
+%Changelog%
+* 29 Jul 2020 Volnei C. Puttini <vcputtini@gmail.com>
++ Fixes: warning: tventity.cpp
+
+* 08 Jul 2020 Volnei C. Puttini <vcputtini@gmail.com>
++ Fixes: warning: ‘void QGraphicsView::resetMatrix()’
+  is deprecated: Use resetTransform() [-Wdeprecated-declarations]
+  gvGraphic->resetMatrix();
++ Fixes: warning: ‘QVariant qVariantFromValue(const T&) [with T = QColor]’
+  is deprecated: Use QVariant::fromValue() instead. [-Wdeprecated-declarations]
+  return qVariantFromValue(QColor(255,255,204)); // odd
++ Fixes:
+   warning: ‘QStringList QString::split(QChar, QString::SplitBehavior,
+   Qt::CaseSensitivity) const’ is deprecated: Use Qt::SplitBehavior variant instead [-Wdeprecated-declarations]
+   words = _str.split(QChar(' '), QString::SkipEmptyParts, Qt::CaseInsensitive);
++ Fixes: recordentity.cpp
+  The field cannot be empty/null, it must be zero, otherwise it causes an
+  error while save the record.
+  From:
+        else {
+           q.bindValue(":ET_OBCOD", "" );
+           q.bindValue(":ET_OBANO", "" );
+           q.bindValue(":ET_OBCLI", "0");
+        }
+  To:
+        else {
+           q.bindValue(":ET_OBCOD", "0" );
+           q.bindValue(":ET_OBANO", "0" );
+           q.bindValue(":ET_OBCLI", "0");
+        }
+
+* 22 Jun 2020 Volnei C. Puttini <vcputtini@gmail.com>
++ The lib VCPLib2 has been merged into main source tree to
+  facilitate general system maintenance.
+
+* 13 May 2020 Volnei C. Puttini <vcputtini@gmail.com>
++ Oficial program name now is: qDocBase2.
+
+* 16 Oct 2019 Volnei C. Puttini <vcputtini@gmail.com>
++ New Release: 2.1.2
++ qdocbase.cpp
+  + Adicionado signal rangeYears(const int&, const int&) para
+    enviar os valores iniciais padrao colocados nos objetos
+    spinBoxFindStartYear e spinBoxFindEndYear para o
+    objeto de pesquisa de documentos dockWidgetFindDocs.
++ tvfinddocs.cpp
+    + Adicao de nova funcionalidade para permitr a filtragem
+    dos dados pela faixa de anos inicial e final.
+    + Adicao dos slots:
+    void valueStartYearChanged(int)
+    void valueEndYearChanged(int)
+    void toolButtonFindClicked(bool)
+    void rangeYears(const int&, const int&)
+    para tratamento dos objetos de restricao da pesquisa por
+    ano incial e final.
+    + Remocao de codigo desnecessarios
+    QSqlDatabase::database().transaction(), QSqlDatabase::database().rollback() e
+    QSqlDatabase::database().commit() dos loops SELECT.
+
+* 07 Oct 2019 Volnei C. Puttini <vcputtini@gmail.com>
++ utililites.h
+  Constatente NS_UTILITIES::PROGRAM_NAME foi substituida
+  pela constante PROGRAM_NAME definida no arquivo qdocbase2.pro
++ Mais limpeza no codigo e ajustesficar mais compativel
+  com os padroes atuais de C++11 em diante.
+
+* 04 Oct 2019 Volnei C. Puttini <vcputtini@gmail.com>
++ Mudando em todos os estilo antigo de cast para o novo: Ex.:
+  Old: QLineEdit *le = (QLineEdit*)sender();
+  New: QLineEdit *le = static_cast<QLineEdit *>(sender());
++ Sinalizacao de variaveis nao usadas com Q_UNUSED().
++ Remocao de casting numericos desnecessarios.
++ Correcao no uso do numero 0, como nulo, usando agora
+  a constante nullptr.
+
+* 03 Oct 2019 Volnei C. Puttini <vcputtini@gmail.com>
++ deflicenca.h: Obsoleto e removido da arvore de
+  desenvolvimento. Nao e mais necessario
+  apresentar informacoes de licenciamento na janela
+  principal. A classe vcpMdiArea() na VCPLib2, mudada
+  para somente ter como parametro do usuario o nome
+  do programa em uso.
+
+* 01 Oct 2019 Volnei C. Puttini <vcputtini@gmail.com>
++ Novo modelo de versionamento: Passando a usar o
+  versionamento semantico: Major.Minor.Patch.
++ Reorganizacao geral da pasta do projeto.
++ Adicicao do aviso de licenca em todos os codigos
+  fontes.
++ VCPLib2 foi adicionada com sendo um subprojeto do
+  DocBase2.
++ Atualizacoes gerais no codigo para ficar mais compativel
+  com os padroes atuais de C++.
++ Class VAbstractPrint::preview, passa a usar as
+  constantes QPrinter::Landscape e QPrinter::Portrait
+  no lugar de Qt::Vertical e Qt:Horizontal para
+  controlar o sentido da pagina impressa.
+  void preview(QPrinter::Orientation=QPrinter::Portrait);
++ Atualizacao do modelo de inicializacao das classes que
+  usam QWidget *parent = 0 para QWidget *parent = nullptr.
+  nullptr é uma palavra-chave que pode ser usada em todos
+  os locais onde NULL é esperado. Como NULL, nullptr é
+  implicitamente conversível e comparável a qualquer tipo
+  de ponteiro. Diferentemente de NULL, ele não é implicitamente
+  conversível ou comparável aos tipos integrais .
++ dialogconfig.ui: retirado o timer para fechamento automatico
+  da janela. Adcionado um botao Fechar. Revisao no texto das
+  mensagens mostradas na janela. Adicionado a versao do
+  compilador GNU GCC usado na compilacao do programa.
+  QString("Compiler: GNU GCC %1.%2.%3").arg(__GNUC__).
+  arg(__GNUC_MINOR__).arg(__GNUC_PATCHLEVEL__);
++ main.cpp e departament.cpp: query.lastError().number().
+  O membro number() esta obsoleto e foi substituido por nativeErrorCode().
+
+* 27 Aug 2019 Volnei C. Puttini <vcputtini@gmail.com>
++ New Release: 2stable01
++ O programa foi agora considerado estavel, desse modo
+  a designacao da versao passa a ser stable.NN
++ recorddocs.cpp e UI
+    + Nao era possivel checar se o CNPJ ou CPF da entidade
+    relacionada era o mesmo do documento que estava sendo
+    cadastrado. Agora isso foi corrigido, sendo que agora
+    esta checagem e feita mediante pergunta ao usuario.
+    Impede que um documento que tenha CNPJ ou CPF seja
+    cadastrado numa entidade diferente.
++ tventity.cpp
+    + Ajustes para incluir juntamente com o nome da
+    entidade e o código o CNPJ ou CPF.
++ Limpeza no codigo. Retirada de warnings durante a
+  compilacao.
+
+* 08 Mar 2017 Volnei C. Puttini <vcputtini@gmail.com>
++ recordentity.cpp
+    + void RecordEntity::dynamic_editFinished()
+      Correcao de um bug no teste dos campos Nome e Cidade quando
+      eles eram deixados vazios.
+      Se o usuario deixa-se o campo Nome vazio e clica-se com o mouse
+      no campo Cidade o programa gerava uma falha de protecao de memoria.
+      Para solucionar o teste agora feito individualmente e para evitar
+      a tentativa de acesso ao demais campos quando o campo Nome esta vazio
+      os demais campos ficam  inativados ate que o usuario digite algo no
+      campo nome.
+
+* 23 Feb 2017 Volnei C. Puttini <vcputtini@gmail.com>
++ New Release: 2beta19
++ Todos os fontes .h
+    + Compilacao para Qt 5.8
+    + Ajustado o modo de chamada do modulo QSql para QtSql
+
+* 05 Jan 2016 Volnei C. Puttini <vcputtini@gmail.com>
++ recordentity.cpp
+    + Remocao da funcao obsoleta:
+        void RecordEntity::registraNoSite(const QString nome,
+                    const QString alias,const QString url)
+    + Resolvendo bug na gravacao da entidades quando são
+    empresa,cliente,fornecedor..., menos o tipo Simples.
+    O bug esta na classe CNPJ e CPF dentro da libvcp2, melhores
+    testes devem ser feitos. Os bug foram corrigidos e
+    agora estao funcionando corretamente. Passando a serem
+    usadas no programa.
+    + Bug corrigido na declaracao SQL da funcao void RecordEntity::saveReg(),
+    que nao estava gravando corretamente o conteudo do campo ET_UF,
+    sempre gravava NULL.
+    O mesmo ocorria na funcao updageReg() e tambem foi corrigido.
+
+* 22 Dec 2015 Volnei C. Puttini <vcputtini@gmail.com>
++ qdocbase.cpp
+    + Adiconado objeto QWintaskButton e QWintaskProgress
+      para podermos mostrar no botao da aplicacao na barra de
+      tarefas o progresso de alguma operacao qualquer.
+      Para isso é necessário criar os seguintes sinais basicos
+      nos objetos setVisibleItem(boot), setMaximumItem(int) e
+      setValueItem(int). Fazer as conexoes necessarias no
+      objeto principal qdocbase.cpp
+
+* 21 Dec 2015 Volnei C. Puttini <vcputtini@gmail.com>
++ New Release: 2beta18
++ tvEntity.cpp ; qdocbase.cpp
+    + Adicao de filtros de pesquisa para encontrar entidades
+    pelos campos CNPJ, IE, CPF e RG
+
+* 18 Dec 2015 Volnei C. Puttini <vcputtini@gmail.com>
+  + Colocacao de mensagens nas propriedades placehold para
+  incentivar o usuario a digitar corretamente o historico
+  dos documentos
+
+* 17 Dec 2015 Volnei C. Puttini <vcputtini@gmail.com>
++ qdocbase.h
+  + Ajuste na sintaxe do slots como segue
+  signals:
+    //void dataSearch(QString &type, QString &data); // Obsoleto
+    void dataSearch(QString , QString ); // Novo formato
+
+* 02 Jun 2014 Volnei C. Puttini <vcputtini@gmail.com>
++ recordentity.cpp
+    + Foram feitas algumas alteracoes nos codigos dos membros
+    updateReg() e saveReg() a fim de tentar sanar os problemas
+    de crash do programa quando usadas os referidos membros.
+    A bem da verdade nao sei o que esta causando verdadeiramente
+    os crashes. Posso especular que seja este novo release do
+    Qt, pois até o release Qt 5.1.x tudo funcionava corretamente.
+    A classe CPF() e quem esta causando uma parte dos travamentos
+    porem, volto a salientar, que isso nao ocorria ate a mudanca
+    do relase do Qt.
+
+* 30 May 2014 Volnei C. Puttini <vcputtini@gmail.com>
++ New Release: 2beta17
++ recordentity.cpp
+    + Correcao da gravacao da entidade da categoria CLIENTE.
+    Quando se tentava gravar uma entidade cliente o programa
+    travava porque o campo ET_OBRACLI nao era inicializado
+    corretamente.
+
+* 18 Mar 2014 Volnei C. Puttini <vcputtini@gmail.com>
++ Nova compilacao usando Qt 5.2.1
++ New Release: 2beta16
+
+* 16 Sep 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ New Release: 2beta15
++ recordentity.cpp
+    + Adicionada rotinas para mostrar o codigo da
+    ultima obra cadastrada no ano corrente, a
+    pedido do usuario.
+
+* 10 Sep 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ recordentity.cpp
+    + Adicionada rotina que salva os campos NOME, ALIAS e URL
+    na tabela jos_weblinks do JOOMLA se houver. Somente
+    ativar esta funcao para uso interno.
+
+* 02 Aug 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ New Release: 2beta13
++ recorddocs.cpp
+    + criaListaImagens(): Permite que o usuario indique
+    um subdiretorio para consultar imagens usando QFileDialog
++ sysactivity.cpp
+    + Adicionado campo ACT_DOCID que sera usado quando
+    aplicavel para gravar o ID do documento afetado.
+
+
+* 29 Jul 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ recordentity.cpp
+    + void RecordEntity::dynamic_editFinished(), nao considera
+    o campo lineEditCEP para testar caracteres repetidos.
+
+* 23 Jul 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ New Release: 2beta12
++ recorddocs.cpp
+    + Permite agora a gravaçao de documentos com valores
+    zerados, porém informa ao usuário sobre o fato antes.
+    + Usando QLocale para padronizacao do ponto decimal.
+    + O termo "Documentos com Valores" foi substituido
+    por "Documentos Identificados", já o valor do doc
+    pode ser zero, mas mesmo assim possuir numero e data.
+
+* 12 Jul 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ New Release: 2beta11
++ recordentity.cpp e recorddocs.cpp
+    + O registro das atividades dos usuarios agora se
+    aplicam as operacoes de delete e update.
+    Antes era so no delete.
++ sysactivity.cpp/h
+    + Ajustados parametros enumeracao para c++11
+    + Ajustes nas declaracoes dos parametros
++ Ajustes gerais nos parametros de funcoes que recebem
+    parametros constantes, foram agora corretamente precedidos
+    por pela declaracao 'const'
++ Correcao para mais clareza de algumas mensagem para o usuario
++ C++11 conversao de sintaxe e uso de novos recursos
+    + Inicializacao de listas quando possivel
+    + foreach() para for( obj1 : obj2 )
++ advsearch.cpp e recorddocs.cpp
+    + void AdvSearch::nameEntity(QModelIndex idx) faz
+    a comparacao do nome da classe e usando a funcao uNameEntities().
+    Isso padroniza o uso dos nomes.
++ recordentity.cpp
+    + Passando algoritimos foreach() para for( x : y ) c++11 compliant    
+
+* 10 Jul 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ Geral
+    + C++11 conversao de sintaxe e uso de novos recursos
+        + Inicializacao de listas quando possivel
+        + foreach() para for( obj1 : obj2 )
+
+* 04 Jul 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ recorddocs.cpp
+    + Removida QByteArray unCompressImage(QByteArray baIn) OBSOLETA
+
+* 04 Jul 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ Usando nova versao Qt 5.1.0
+
+* 28 Jun 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ utilities.cpp
+    + Classe vcpString() - Adicionado membro
+    bool isReplicate(const int fldSize=0,
+                     const qreal percentage=0.40) const;
+    O qual trata a string a procura de caracteres repetidos
+    em excesso. Melhorias nesse membro serao feitas no
+    futuro.
+
+* 25 Jun 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ Geral: Substituindo o uso da constante NULL por nullptr
+    compativel com o padrao C++11
+
+* 24 Jun 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ New Release: 2beta10
++ recorddocs.cpp e recordentity.cpp
+    + Melhoria na checagem de consistencia dos campos
+    tipo QLineEdit utilizando o singal editingFinished()
+    de modo dinamico.
++ advsearch.cpp
+    + Coloca em negrito os groupboxes selecionados pelo
+    usuario, para facilitar a visualizacao.
+
+* 21 Jun 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ recorddocs.cpp
+    + Corrigida a limpeza do comboxBoxDepartamentos, agora
+    limpa corretamente comboBoxDepartamentos antes de ser
+    novamente preenchido com os dados da tabela, apos o
+    nome do departamento ser gravado ou apagado na tabela.
+    + O slot editingFinished() que somente testava se o
+    usuario digitava caracteres invalidos nos campos, agora
+    efetua tratamentos mais abrangentes e em diversos
+    campos distintos.
+    O nome do slot foi atualizado para dynamic_editingFinished()
+    a fim de mostar esta nova funcao.
+
+* 20 Jun 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ New Release: 2beta9
++ Nome do banco de dados foi trocado de DBDGTZDOC para
+  DOCBASE, por questoes de legibilidade e coerencia
+  com o novo sistema
++ Remocao da classe  Modulos a qual foi substituida por
+    enum class ModulosOfApp
++ A mensagem de advertencia apresentada quando o usuario
+    tenta sair do programa sem antes fechar as janelas
+    foi alterada para um texto que esclarece melhor ao
+    usuario sobre o perigo de fechar a aplicacao sem
+    fechar as janelas antes.
++ Nome da identificacao do programa para fins de
+    gravacao no registro do Windows ou no arquivo .conf
+    do linux, foi mudado de qDocBase para qDocBase2.
+    Por questoes de concordancia com a versao atual.
+
+* 19 Jun 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ New Release: 2beta8
++ src.pro
+    + Adicionado o parametro -std=c++11, para o g++
+    poder compilar corretamente as novas declaracoes
+    do padrao C++ 2011
++ Ajustes em todos os modulos para utilizarem corretamente
+  a 'enum class ModulesOfApp' como tipos de controle.
++ sysactivity.cpp
+    + Melhorias gerais
+
+* 18 Jun 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ New Release: 2beta7
++ recorddocs.cpp, advsearch.cpp
+    + Em ambas as rotinas foram colocadas checagens que
+    determinam se a imagem sendo visualizada pode ser
+    ampliada, reduzida ou rotacionada. Ex. Somente imagens
+    visualizaveis podem ser manipuladas desse modo. Nao
+    ha por que ampliar, reduzir ou rotationar icones
+    simples.
+    + deleteReg() - Usa numAffectRows() para detectar
+    corretamente se o registro solicitado foi ou nao
+    apagado da tabela. Se o resultado for > 0 entao
+    o registro foi apagado.
++ recentity.cpp
+    + deleteReg() - Usa numAffectRows() para detectar
+    corretamente se o registro solicitado foi ou nao
+    apagado da tabela. Se o resultado for > 0 entao
+    o registro foi apagado.
++ sysactivity.cpp
+    + Adiconado nova classe que sera responsavel por
+    gravar informacoes sobre o acesso dos usuarios
+    a certos modulos e tipo de operacoes.
+    Sera utilizada em todos os modulos os quais
+    forem importantes.
+
++ qdocbase.cpp
+    + Correcao da denominacao "Outros" para "Personalizados"
+    nos menus.
++ Configuracoes
+    + Adicionada a opcao
+    "Manter Nome da Entidade após gravar novo registro?", a
+    implementa a facilidade de se for marcado o label contendo
+    o nome da entidade principal nao sera apagado nas operacoes
+    de gravacao e atualizacao para que o usuario nao tenha que
+    sempre escolher a mesma.
++ recorddocs.cpp
+    + Corrigido bug entre os comboBoxDepartamentos e
+    comboBoxFileFilters, os quais usavam o mesmo objeto
+    QLineEdit para editar textos. Agora usam objetos
+    separados.
+
+
+* 17 Jun 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ New Release: 2beta6
++ advsearch.cpp
+    + Ajustes no tipo do icone mostrado no toolbutton
+    usado para limpar a tela.
+
+* 14 Jun 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ recordentity.cpp
+    + Ajustes cosmeticos no checkBoxStatus para mostrar
+    icone vermelho para inativo e verde para ativo
++ advsearch.cpp
+    + Adicionado selecao de entidade relacionada para
+    filtragem mais detalha.UI foi remodulada para atender
+    estas novas caracteristicas
+    Corrigido o tipo numerico usado para tratamento
+    dos campos Valores do Documento.
+
++ A designacao da entidade "Identificacao" foi trocada
+  para "Entidade Relacionada" a qual e mais correta
+  e ilustra melhor o objetivo desta caracteristica.
+  Internamente no programa os campos etc, que tratam
+  desta caracteristica ainda serao mantidos como estao.
++ tvfinddocs.cpp
+    + Correcao a montagem da TreeView. Formatacao e
+    eliminacao de variaveis nao usadas.
+
+
+* 10 Jun 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ New Release: 2beta5
++ NS_UTILITIES
+    + Ajustes nos parametros da funcoes. Todos os parametros
+    que nao sofrem mudancas foram tipados para 'const'.
+
+
+* 07 Jun 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ Diversos
+    + Alterada a maneira como os icones para os botoes e
+    ferramentas sao configurados no programa.
+    Agora usa a funcao QIcon::fromTheme(), que primeiro
+    tenta usar um icone padrao do SO nativo e se nao
+    conseguir encontar um usa um dos icones internos do
+    programa. Isso nos da uma melhor padronizacao em
+    diferentes SOs.
+
+* 06 Jun 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ recordentity.cpp
+    + Devido a alteracao no padrao dos campos DOCENTITY.ET_UF e
+    DOCENTITY.ET_CEP no banco de dados, foram efetuados
+    ajustes nas funcoes saveReg() e updateReg() que agora
+    nao gravam mais as mascara do CEP quando o campo estiver
+    vazio. Antes os padroes para UF nao informado era SP
+    e para CEP a mascara, agora passam a ser NULL e NULL
+    + Os campos que tem como padrao na tabela se forem
+    vazios serem iguais a (null), sao agora gravados
+    respeitando essa premissa.
+
+* 05 Jun 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ New Release: 2beta4
++ A Classe chamada Outros foi rebatizada para Personalizados
+    por questoes de melhor clareza da funcao desta classe.
++ vstandarditemmodel_p.cpp
+    + Usa agora QStringList NS_UTILITIES::uClassesOfEntities()
+    para determinar terminar se e um nome de classe ou nao
++ recordentity.cpp
+    + saveReg() e updateRed(), revisao da logica de
+    validacao de CNPJ e CPF digitados pelo usuario e melhoria
+    da mensagem de erro informada ao usuario.
+    + Removido no cadastro de Projetos/Obras os campos
+    referentes ao Principal ou Dependencia, o uso
+    deles e um pouco confuso e pouco pratico.
+    Os campos ET_OBMOD e ET_OBDEPE foram retirados da tabela
+    O campo ET_OBCOD foi ampliato de UNSIGNED TINYINT (0-255)
+    para SMALLTINT (-32767-32767)
+    Afeta tambem as rotinas: printentity.cpp
+    Afeta tambem a rotina: QString NS_UTILITIES::uFormatCodigoObra(int obra, int ano),
+    que agora retorna 0000-00
++ NS_UTILITIES
+    + funcao QPair<QImage,QString> uLoadImages(QString x),
+    Agora se a imagem tiver altura menor que 100 pixel fixa
+    em 500px e se for maior entao fica do tamanho original.
++ recorddocs.cpp
+    + incluido teste de limitacao para gravacao de
+    registros no banco de dados. Usado geralmente
+    para licenca de demonstracao
+    + Melhoria no filtro de arquivos temporarios que nao
+    devem ser lidos pela funcao criaListaImagens().
+    Para sanitizar a lista de arquivos mostrados ao
+    usuario.
+
++ tventity.cpp
+    + Adicicao de icones ao lado dos nomes da entidades
+    indicando visualmente seu estado: ATIVO(verde) e
+    INATIVO(vermelho)
+
+* 04 Jun 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ tventity.cpp
+    + Usa agora o membro QStringList NS_UTILITIES::uClassesOfEntities(),
+    para montar os titulos das colunas na treeViewEntities.
++ recordentity.cpp
+    + Correcao do algoritimo da funcao nameEntity(QModelIndex),
+    para desconsiderar corretamente os nomes da classes quando
+    o usuario clicar sobre a treeViewEnities. E alguma otimizacao.
+    + Outras pequenas ajustes e correcoes no codigo
+
+* 03 Jun 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ New Release: 2beta3
++ utililites
+    + Retirada de codigo obsoleto e otimizacao do existente
++ qdocbase.cpp
+    + Resolvido o problema da atualizacao dos dados das views
+    nas janelas docWidgetEntity e docWidgetFindDocs.
+    Agora sempre elas sao chamadas os classes promovidas
+    atualizam as treeviews.
+    + Otimizacao geral do codigo
++ recordentity.cpp
+    + As checagens so ocorrem se a class nao for Simples
+    pois essa classe somete permite cadastrar o campo
+    Nome da entidade.
+    + Corrigido o checagem de CNPJ e CPF para entidades
+    das classe Empresa, Fornecedor e Clientes.
+    + Otimizacao geral do codigo
+
+* 31 May 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ recordentity.cpp
+    + Adicionado checagem do CPF usando a classe CPF
+    + Inicio da correcao do BUG que impede que o cliente
+    informasse CNPJ/IE e IM.
+
+* 29 May 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ recordentity.cpp
+    + Adicionado checagem do CNPJ usando a classe CNPJ
+    + Corrigida a mascara do campo CNPJ na UI
+
+* 28 May 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ banco de dados
+    + os campos DL_ARQUIVO e DL_ARQTIPO foram removidos da
+    tabela DOCLIBRARY, por nao terem siginificado fora a
+    Operacional.
++ recordentity.cpp
+    + No MySQL do windows, deve-se passar o dado para o
+    campo com o mesmo tipo. Ex. se o campo e INT passar um int.
++ recorddocs.cpp
+    + Inclusao de verificacao se o nome do operador foi ou
+    nao cadastrado, antes de tentar gravar ou atualizar um registro
+
+* 27 May 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ Release: 2beta2
+
+* 23 May 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ Inclusao da nova biblioteca VCPLib2 revisada e atualizada para o Qt5
++ Release: 2alpha3
+
+* 21 May 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ Release: 2alpha2
+
+* XXX May 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ Versao: 2alpha1
++ Todos os principais modulos foram codificados e implantados
+  A partir de agora serao efetuados teste de estabilidade,
+  desempenho e implementacao de novas rotinas quando se
+  fizerem necessarias.
+
+* XXX Apr 2013 Volnei C. Puttini <vcputtini@gmail.com>
++ Versao: 2alpha0
++ Inicio da recodificacao do sistema usando o Qt5.
+  A versao de producao sera iniciada em 2.stable01, ate la as
+  versoes serao: 2alpha e 2beta
+
+>>>>>>> a3364ec08e1bb879569ad2b6b6a4d1caf17f7017
